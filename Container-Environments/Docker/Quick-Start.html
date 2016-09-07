@@ -1,0 +1,378 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Quick Start · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Introduction.html">
+            
+                <a href="../Introduction.html">
+            
+                    
+                    Container Environments
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chroot/Introduction.html">
+            
+                <a href="../chroot/Introduction.html">
+            
+                    
+                    chroot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../LXC/Introduction.html">
+            
+                <a href="../LXC/Introduction.html">
+            
+                    
+                    LXC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Introduction.html">
+            
+                <a href="Introduction.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.3.1" data-path="Quick-Start.html">
+            
+                <a href="Quick-Start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Quick Start</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="docker">Docker</h1>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="check-installation">Check Installation</h3>
+<p>To spin up a Docker container, make sure Docker is installed on the workstation you are using.</p>
+<pre><code class="lang-bash">$ docker -v
+Docker version 1.12.1, build 23cf638
+</code></pre>
+<h3 id="run-whalesay">Run whalesay!</h3>
+<p>Remember the fun Linux command, <code>cowsay</code>? Docker provides an introduction container image based on it. We will use this image to spin up our first container. To spin up containers, we use the <code>docker run</code> command. The command follows the following argument pattern:</p>
+<pre><code class="lang-bash">$ docker run [image name] [...]
+</code></pre>
+<p>To spin up a whalesay container, run the following command:</p>
+<pre><code class="lang-bash">$ docker run docker/whalesay cowsay <span class="hljs-string">&apos;Hello World!&apos;</span>
+</code></pre>
+<p>We are telling docker to run a the <a href="https://hub.docker.com/r/docker/whalesay" target="_blank">docker/whalesay</a> container. It will search for this container locally. Since you have not run this image before, it will then search for it on <a href="https://hub.docker.com" target="_blank">Docker Hub</a>. This is a site that hosts repositories of images for spinning up containers. Docker will then download the needed image. We are then telling Docker to initially run the command <code>cowsay &apos;Hello World&apos;</code> and it will return the output. The output looks as the following:</p>
+<pre><code class="lang-bash">______________
+&lt; Hello World! &gt;
+--------------
+   \
+    \
+     \     
+                   <span class="hljs-comment">##        .            </span>
+             <span class="hljs-comment">## ## ##       ==            </span>
+          <span class="hljs-comment">## ## ## ##      ===            </span>
+      /<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;&quot;</span>___/ ===        
+ ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+      \______ o          __/            
+       \    \        __/             
+         \____\______/
+</code></pre>
+<h3 id="running-more">Running more</h3>
+<p>Obviously, containers can be used for much more than printing a whale saying &quot;Hello World!&quot;  This time, let&apos;s download the image before running it. We can use the <code>docker pull</code> command to do this.</p>
+<pre><code class="lang-bash">$ docker pull fedora
+</code></pre>
+<p>This will download the latest version of the fedora image from Docker Hub. Let&apos;s spin up a fedora container with an interactive shell.</p>
+<pre><code class="lang-bash">$ docker run -i -t fedora /bin/bash
+[root@a58980471b84 /]<span class="hljs-comment">#</span>
+</code></pre>
+<p>As you can see, you are now root within an instance of fedora. What exactly did we call there, though?</p>
+<ul>
+<li>The <code>-i</code> flag starts an interactive container.</li>
+<li>The <code>-t</code> flag creates a pseudo-TTY which attaches <em>stdin</em> and <em>stdout</em>.</li>
+</ul>
+<p>If you want to name your container, you can use the <code>--name my-name</code> flag. For example, spinning up a container titled <em>fedora-rocks</em>:</p>
+<pre><code class="lang-bash">$ docker run -i -t --name fedora-rocks fedora /bin/bash
+[root@a58980471b84 /]<span class="hljs-comment">#</span>
+</code></pre>
+<h3 id="listing-containers">Listing Containers</h3>
+<p>While your fedora container is running, open up another terminal. You can view your currently running containers by the following:</p>
+<pre><code class="lang-bash">$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+6dc092fe3cc5        fedora              <span class="hljs-string">&quot;/bin/bash&quot;</span>         11 seconds ago      Up 8 seconds                            my-fedora
+</code></pre>
+<p>You may be wondering, &quot;great, I can see my running containers! How about my stopped or old containers?&quot; You can view those by using the <code>-a</code> flag:</p>
+<pre><code class="lang-bash">$ docker ps <span class="hljs-_">-a</span>
+</code></pre>
+<h3 id="starting--stopping-containers">Starting / Stopping Containers</h3>
+<p>Obviously, it is not useful to always have to keep a terminal open with your current container. You can start an already created container by passing its name to the start command:</p>
+<pre><code class="lang-bash">$ docker start my-fedora
+</code></pre>
+<p>To run a command on a started container, use the <code>docker exec</code> command:</p>
+<pre><code class="lang-bash">$ docker <span class="hljs-built_in">exec</span> -i -t my-fedora /bin/bash
+[root@6dc092fe3cc5 /]<span class="hljs-comment">#</span>
+</code></pre>
+<p>This launches an interactive terminal with our container just as when we used the  <code>docker run</code> command earlier. When we exit this terminal, however, the container will not stop unlike when we ran it earlier.</p>
+<p>To stop the container, use the  <code>docker stop</code> command:</p>
+<pre><code class="lang-bash">$ docker stop my-fedora
+my-fedora
+</code></pre>
+<p>You can now confirm that the container has stopped by listing the active containers:</p>
+<pre><code class="lang-bash">$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</code></pre>
+<p>Congrats! You have successfully ran your first few docker containers.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Docker">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Quick Start","level":"1.2.3.1","depth":3,"previous":{"title":"Docker","level":"1.2.3","depth":2,"path":"Container-Environments/Docker/Introduction.md","ref":"Container-Environments/Docker/Introduction.md","articles":[{"title":"Quick Start","level":"1.2.3.1","depth":3,"path":"Container-Environments/Docker/Quick-Start.md","ref":"Container-Environments/Docker/Quick-Start.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Table-of-Contents.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Container-Environments/Docker/Quick-Start.md","mtime":"2016-09-07T03:03:18.025Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-09-07T04:21:45.435Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
